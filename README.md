@@ -1,3 +1,22 @@
+# Tock Fork
+
+This was forked from https://github.com/palominolabs/metrics-guice because we
+are not yet able to switch to dropwizard 5.0.0, but the 4.x branch did not have
+packages published outside of bintray which is being turned down.
+
+## Building new versions
+
+* Update gradle.properties and RELEASE-NOTES.md with the changes and push
+  change to master.
+* Build a new jar
+```
+./gradlew jar
+```
+* Copy `build/libs/metrics-guice-5.0.1-tock0.jar` to `server/lib` and update
+  `build.gradle` in an admin repo PR.
+
+-----------------------------------------------------------------------------
+
 # Quick Start
 
 ### Get the artifacts
