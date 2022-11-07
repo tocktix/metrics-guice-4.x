@@ -1,7 +1,7 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.Counter;
-import io.dropwizard.metrics5.annotation.Counted;
+import com.codahale.metrics.Counter;
+import com.codahale.metrics.annotation.Counted;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 

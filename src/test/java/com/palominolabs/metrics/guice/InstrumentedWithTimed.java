@@ -1,6 +1,6 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.annotation.Timed;
+import com.codahale.metrics.annotation.Timed;
 
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 class InstrumentedWithTimed {

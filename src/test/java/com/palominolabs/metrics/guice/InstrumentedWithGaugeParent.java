@@ -1,6 +1,6 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.annotation.Gauge;
+import com.codahale.metrics.annotation.Gauge;
 
 class InstrumentedWithGaugeParent {
     @Gauge(name = "gaugeParent", absolute = true)

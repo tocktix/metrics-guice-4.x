@@ -1,3 +1,6 @@
+- 5.0.1-tock0
+    - Metrics 4.x
+    - dependency updates
 - 5.0.1
     - Publish to maven central
     - Build system updates

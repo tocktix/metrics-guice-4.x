@@ -1,6 +1,6 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.annotation.Metered;
+import com.codahale.metrics.annotation.Metered;
 
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 class InstrumentedWithMetered {

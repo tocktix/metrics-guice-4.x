@@ -1,11 +1,11 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.MetricRegistry;
+import com.codahale.metrics.MetricRegistry;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.junit.jupiter.api.Test;
 
-import static io.dropwizard.metrics5.MetricRegistry.name;
+import static com.codahale.metrics.MetricRegistry.name;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GaugeInheritanceTest {
@@ -34,7 +34,7 @@ class GaugeInheritanceTest {
 
     static class Parent {
 
-        @io.dropwizard.metrics5.annotation.Gauge
+        @com.codahale.metrics.annotation.Gauge
         int aGauge() {
             return complexInternalCalculation();
         }

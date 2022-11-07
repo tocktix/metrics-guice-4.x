@@ -1,15 +1,14 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.MetricName;
-import io.dropwizard.metrics5.annotation.Counted;
-import io.dropwizard.metrics5.annotation.ExceptionMetered;
-import io.dropwizard.metrics5.annotation.Gauge;
-import io.dropwizard.metrics5.annotation.Metered;
-import io.dropwizard.metrics5.annotation.Timed;
+import com.codahale.metrics.annotation.Counted;
+import com.codahale.metrics.annotation.ExceptionMetered;
+import com.codahale.metrics.annotation.Gauge;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 import java.lang.reflect.Method;
 import javax.annotation.Nonnull;
 
-import static io.dropwizard.metrics5.MetricRegistry.name;
+import static com.codahale.metrics.MetricRegistry.name;
 
 /**
  * Uses the name fields in the metric annotations, if present, or the method declaring class and method name.
@@ -23,9 +22,9 @@ public class DeclaringClassMetricNamer implements MetricNamer {
 
     @Nonnull
     @Override
-    public MetricName getNameForCounted(@Nonnull Method method, @Nonnull Counted counted) {
+    public String getNameForCounted(@Nonnull Method method, @Nonnull Counted counted) {
         if (counted.absolute()) {
-            return name(counted.name());
+            return counted.name();
         }
 
         if (counted.name().isEmpty()) {
@@ -41,9 +40,9 @@ public class DeclaringClassMetricNamer implements MetricNamer {
 
     @Nonnull
     @Override
-    public MetricName getNameForExceptionMetered(@Nonnull Method method, @Nonnull ExceptionMetered exceptionMetered) {
+    public String getNameForExceptionMetered(@Nonnull Method method, @Nonnull ExceptionMetered exceptionMetered) {
         if (exceptionMetered.absolute()) {
-            return name(exceptionMetered.name());
+            return exceptionMetered.name();
         }
 
         if (exceptionMetered.name().isEmpty()) {
@@ -56,9 +55,9 @@ public class DeclaringClassMetricNamer implements MetricNamer {
 
     @Nonnull
     @Override
-    public MetricName getNameForGauge(@Nonnull Class<?> instanceClass, @Nonnull Method method, @Nonnull Gauge gauge) {
+    public String getNameForGauge(@Nonnull Class<?> instanceClass, @Nonnull Method method, @Nonnull Gauge gauge) {
         if (gauge.absolute()) {
-            return name(gauge.name());
+            return gauge.name();
         }
 
         if (gauge.name().isEmpty()) {
@@ -70,9 +69,9 @@ public class DeclaringClassMetricNamer implements MetricNamer {
 
     @Nonnull
     @Override
-    public MetricName getNameForMetered(@Nonnull Method method, @Nonnull Metered metered) {
+    public String getNameForMetered(@Nonnull Method method, @Nonnull Metered metered) {
         if (metered.absolute()) {
-            return name(metered.name());
+            return metered.name();
         }
 
         if (metered.name().isEmpty()) {
@@ -84,9 +83,9 @@ public class DeclaringClassMetricNamer implements MetricNamer {
 
     @Nonnull
     @Override
-    public MetricName getNameForTimed(@Nonnull Method method, @Nonnull Timed timed) {
+    public String getNameForTimed(@Nonnull Method method, @Nonnull Timed timed) {
         if (timed.absolute()) {
-            return name(timed.name());
+            return timed.name();
         }
 
         if (timed.name().isEmpty()) {

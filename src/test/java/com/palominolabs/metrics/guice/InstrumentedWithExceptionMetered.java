@@ -1,8 +1,8 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.annotation.ExceptionMetered;
-import io.dropwizard.metrics5.annotation.Metered;
-import io.dropwizard.metrics5.annotation.Timed;
+import com.codahale.metrics.annotation.ExceptionMetered;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 
 @SuppressWarnings("UnusedReturnValue")
 class InstrumentedWithExceptionMetered {

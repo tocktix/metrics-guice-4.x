@@ -1,6 +1,6 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.annotation.Counted;
+import com.codahale.metrics.annotation.Counted;
 
 class StringThing extends GenericThing<String> {
 

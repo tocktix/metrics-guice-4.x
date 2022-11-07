@@ -1,8 +1,7 @@
 package com.palominolabs.metrics.guice;
 
-import io.dropwizard.metrics5.Gauge;
-import io.dropwizard.metrics5.MetricName;
-import io.dropwizard.metrics5.MetricRegistry;
+import com.codahale.metrics.Gauge;
+import com.codahale.metrics.MetricRegistry;
 import com.google.inject.spi.InjectionListener;
 
 import java.lang.reflect.Method;
@@ -13,10 +12,10 @@ import java.lang.reflect.Method;
  */
 public class GaugeInjectionListener<I> implements InjectionListener<I> {
     private final MetricRegistry metricRegistry;
-    private final MetricName metricName;
+    private final String metricName;
     private final Method method;
 
-    public GaugeInjectionListener(MetricRegistry metricRegistry, MetricName metricName, Method method) {
+    public GaugeInjectionListener(MetricRegistry metricRegistry, String metricName, Method method) {
         this.metricRegistry = metricRegistry;
         this.metricName = metricName;
         this.method = method;

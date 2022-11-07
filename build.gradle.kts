@@ -20,15 +20,15 @@ group = "com.palominolabs.metrics"
 
 val deps by extra {
     mapOf(
-        "metrics" to "5.0.0",
+	"metrics" to "4.1.0",
         "slf4j" to "1.7.30",
         "guice" to "4.2.3"
     )
 }
 
 dependencies {
-    implementation("io.dropwizard.metrics5:metrics-core:${deps["metrics"]}")
-    implementation("io.dropwizard.metrics5:metrics-annotation:${deps["metrics"]}")
+    implementation("io.dropwizard.metrics:metrics-core:${deps["metrics"]}")
+    implementation("io.dropwizard.metrics:metrics-annotation:${deps["metrics"]}")
     implementation("com.google.inject:guice:${deps["guice"]}")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
 
